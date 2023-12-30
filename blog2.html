@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html{
+            font-size: 10px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        h1{
+            font-size: 1.9rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+
+        /* header{
+            width: 100%;
+            height: 5rem;
+            background-color: aliceblue;
+            position: fixed;
+            top: 0;
+            z-index: 333;
+        } */
+
+        .container{
+            width: 96%;
+            max-width: 117rem;
+            margin: 0 auto;
+        }
+
+
+/* Nav bar */
+        .navbar {
+            background-color: black;
+            /* pastel light green */
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            z-index: 2;
+            font-family: 'Nunito', sans-serif;
+            
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color:#c59958;
+            font-size: 14px;
+        }
+
+       
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: #c59958;;
+            /* pastel light green */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .logo {
+            font-weight: bold;
+            padding-right: 15px;
+            font-size: 25px;
+            padding-left:0px;
+        }
+
+        .logo a {
+            font-size: 25px; /* Adjust the size as per your needs */
+           
+        }
+
+        .logo1{
+            margin-right: 2px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* footer */
+        .footer {
+            background-color: black;
+            /* margin-top: 600px; */
+            padding: 35px 0;
+            text-align: center;
+            position: scroll;
+            width: 100%;
+           
+           
+            
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-section {
+            margin: 25px;
+        }
+
+        .footer-section h3 {
+            color:#c59958;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color:#c59958;
+            text-decoration: none;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D7B996;
+            /* light brown */
+        }
+
+        .footer-text {
+            color:#c59958;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        .hero{
+            max-width: 114rem;
+            height: 40rem;
+            background: url(sickcat.jpeg) no-repeat center center / cover;
+            margin: 5rem auto;
+            
+        }
+
+
+
+
+        main{
+            width: 100%;
+            max-width: 80rem;
+            /* background-color: rgb(204, 158, 231); */
+            background-color: white;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            margin-top: -15rem;
+        }
+
+        main h2{
+            font-size: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        main .profile-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem;
+        }
+
+        main .profile-container .profile{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .profile-container .profile .img-container{
+            width: 6rem;
+            height: 6rem;
+            background: url(author2.jpeg) no-repeat center center / cover;
+            border-radius: 0.5rem;
+        }
+
+        main .profile-container .profile .text{
+            margin: 0 1rem;
+            color: #5b5963;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .profile .text h3{
+            text-transform: uppercase;
+        }
+
+        /* .btn{
+            display: inline-block;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            background-color: green;
+            border-radius: 0.2rem;
+        } */
+
+        main p{
+            color: #5b5963;
+            margin: 1rem 0;
+        }
+
+        main .content h4{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #5b5963;
+            margin: 2rem 0;
+        }
+
+        main .content .content-img-container{
+            width: 100%;
+            height: 25rem;
+            background: url(cat-vet.jpeg) no-repeat center center / cover;
+        }
+
+        main .content .content-img-container2{
+            width: 100%;
+            height: 40rem;
+            background: url(catfood.jpeg) no-repeat center center / cover;
+        }
+
+
+        blockquote{
+            font-size: 1.4rem;
+            padding: 1rem 2.8rem;
+            line-height: 1.6;
+            font-weight: 300;
+            box-shadow: inset 0.5rem 0 0 #fd735a ;
+            background-color: #f5f5f5;
+        }
+
+
+        .tags{
+            display: flex;
+            align-items: center;
+        }
+        .tags p{
+            font-size: 1.4rem;
+            text-transform: capitalize;
+        }
+        .tags a{
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            background-color: #f5f5f5;
+            color: #5b5963;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin: 0 0.5rem;
+
+        }
+
+        .articles{
+            width: 100%;
+            background-color: #f5f5f5;
+            /* margin: 4rem 0; */
+            margin-top: 4rem;
+            padding: 5rem 0;
+        }
+
+        .articles .article-heading{
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .article-heading h5{
+            font-size: 10rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            position: relative;
+            color: rgba(223, 223, 223, 0.932);
+        }
+
+        .article-heading h6{
+            font-size: 4rem;
+            font-weight: 200;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #5b5963;
+        }
+
+        .cards{
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem auto;
+            gap: 5rem;
+        }
+
+        .cards .card-container{
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container .img-holder{
+            max-width: 100%;
+            height: 24rem;
+            background: url(madcat.jpeg) no-repeat center center /cover;
+            position: relative;
+        }
+
+        .cards .card-container.two .img-holder{
+            background: url(catcare2.jpeg) no-repeat center center /cover;
+            
+            
+        }
+
+        .cards .card-container.three .img-holder{
+            background: url(catfacts2.png) no-repeat center center /cover;
+            
+        }
+
+        .cards .card-container .img-holder a{
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            display: inline-block;
+            color: #429f98;
+            font-weight: 400;
+            background-color: white;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container:hover{
+            transform: translateY(-1rem);
+        }
+
+        .cards .card-container:hover a{
+            background-color: #fd735a;
+            color: white;
+        }
+
+        .cards .card-container .card-text {
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 0 0.3rem grey;
+
+        }
+
+        .cards .card-container .card-text h4{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .cards .card-container .card text p{
+            font-size: 1.2rem;
+        }
+
+        /* .articles .button{
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .articles .btn{
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            font-weight: 200;
+            border-radius: none;
+            padding: 0.5rem 3rem;
+        } */
+
+      </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <navbar>
+        <div class="navbar">
+            <ul>
+                <li class="logo1"><a href="#"><img src="logo1.png" height="45px" alt="FelineFinds Logo"></a></li>
+                <li class="logo"><a href="#"><strong>FelineFinds</strong></a></li>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="http://localhost/felinefinds/cats.php">Cats</a></li>
+                <li class="dropdown">
+                    <a href="#">Accessories</a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost/felinefinds/catfood.php">Food</a>
+                        <a href="http://localhost/felinefinds/cattoy.php">Toys</a>
+                        <a href="http://localhost/felinefinds/catcloth.php">Clothing</a>
+                    </div>
+                </li>
+                <li><a href="blog1.html">Blogs</a></li>
+                <li><a href="http://127.0.0.1:5001">Meow Medic</a></li>
+                <li><a href="http://localhost/felinefinds/vets.php">Vets</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </navbar>
+    
+<!-- Main page -->
+
+    <div class="container">
+        <div class="hero">
+           
+
+        </div>
+
+
+        <main>
+            <h2>Is It Time to Say Goodbye? Recognizing the Signs That Your Cat May Be Dying</h2>
+            <div class="profile-container">
+                <div class="profile">
+                    <div class="img-container">
+
+                    </div>
+                    <div class="text">
+                        <h3>Arman Sadiq</h3>
+                        <p>December 2,2023</p>
+                    </div>
+                </div>
+                <!-- <div class="button">
+                    <a href="#" class="btn">Passion</a>
+                </div> -->
+            </div>
+
+            <div class="content">
+                <p>Saying goodbye to a beloved feline companion is one of the most difficult challenges a cat owner can face. As responsible caregivers, it is crucial for us to understand the signs that indicate our cat may be nearing the end of their life. By recognizing these subtle indicators, we can provide the appropriate care, support, and comfort during this delicate stage. In this article, we delve into the physical and behavioral signs that suggest your cat may be approaching the end, helping you navigate this emotional journey with compassion and knowledge.
+
+                </p>
+
+
+                <p>One of the first signs that your cat may be nearing the end is a noticeable change in their appetite. Cats who are nearing the end of their lives may exhibit a decreased interest in food or completely refuse to eat. Additionally, weight loss can become apparent, even if their eating habits remain relatively unchanged. These changes can be attributed to various factors such as reduced organ function, discomfort, or underlying health conditions. It is important to monitor your cat's eating patterns and consult with a veterinarian if significant changes occur.</p>
+
+                <div class="content-img-container2">
+
+                </div>
+
+
+                
+                <h4>Declining Energy Levels and Lethargy</h4>
+
+                <p>Another common sign that your cat may be nearing the end of their life is a noticeable decrease in energy levels and increased lethargy. Cats who were once active and playful may become increasingly withdrawn, spending more time sleeping or resting. They may show reluctance to engage in activities they once enjoyed. It's crucial to differentiate between normal aging and a significant decline in energy. If you observe a persistent lack of energy and a drastic decrease in their usual behaviors, it may be an indication that their health is deteriorating.</p>
+
+                <h4>Changes in Behavior and Personality:</h4>
+
+                <p>As cats approach the end of their lives, they may exhibit changes in behavior and personality. They might become more irritable, anxious, or show signs of confusion. Your once sociable and affectionate cat may withdraw from human interaction or prefer solitude. On the other hand, some cats may seek increased attention and cling to their caregivers. Any sudden or significant alterations in their behavior patterns should be taken seriously and discussed with a veterinarian, as they could be indicators of pain, discomfort, or distress.</p>
+
+                
+
+                <h4>Altered Grooming Habits and Poor Coat Condition:</h4>
+
+                <p>Cats are known for their meticulous grooming habits, but when they are nearing the end of their lives, you may observe changes in their grooming routines. They may groom themselves less frequently or neglect certain areas of their coat. As a result, their fur may appear dull, unkempt, or matted. This can be due to a lack of energy, discomfort, or physical limitations. Gentle brushing and regular grooming assistance can provide comfort and help maintain their coat's condition.</p>
+
+                <blockquote>"As cats approach the end of their lives, their altered grooming habits often serve as a poignant reflection of their declining health. Just as they once meticulously groomed themselves, we must now provide them with gentle assistance, honoring their dignity and offering comfort in their final moments." -<i>Dr. Michael Thompson</i></blockquote>
+
+                <h4>Decline in Mobility and Coordination:</h4>
+
+                <p>A cat nearing the end of their life may experience a decline in mobility and coordination. They may have difficulty climbing stairs, jumping onto furniture, or even walking steadily. Muscle weakness, joint pain, or neurological issues can contribute to these changes. Providing easy access to food, water, litter boxes, and comfortable resting areas can help alleviate their physical challenges. It may also be necessary to consult with a veterinarian to explore options for pain management and support.</p>
+
+                <blockquote>
+                    "Saying goodbye to a beloved cat is heart-wrenching, but take solace in knowing that you provided a lifetime of love and care. In their final moments, offer comfort, compassion, and the gift of a peaceful farewell, knowing you gave them the best life possible."- <i>Dr. Sara Johnson</i>
+                </blockquote>
+
+                <h4>Embracing the Final Chapter: Providing Love, Comfort, and Dignity</h4>
+
+                <p>Recognizing the signs that your cat may be dying is a heart-wrenching but essential aspect of responsible pet ownership. By staying vigilant and attuned to their well-being, you can ensure that your beloved feline friend receives the care and support they need during this difficult time. Remember, consulting with a veterinarian is crucial in assessing your cat's condition, determining the best course of action, and exploring ways to provide them with comfort and dignity in their final days. As difficult as it may be , it is our responsibility to prioritize their well-being and make informed decisions based on their best interests.</p>
+
+                <div class="content-img-container">
+
+                </div>
+
+                <p>Engage in open and honest communication with your veterinarian. They can provide valuable guidance, assess your cat's overall condition, and discuss available options for pain management or palliative care. Veterinary professionals have the expertise to help you make difficult decisions regarding end-of-life care, including euthanasia if it becomes necessary to prevent unnecessary suffering.</p>
+
+                <p>Saying goodbye to a cherished feline companion is undoubtedly one of life's most heart-wrenching experiences. However, by recognizing the signs that your cat may be dying and approaching the situation with empathy and understanding, you can ensure that their final days are filled with love, dignity, and a sense of peace. Remember, you have provided a lifetime of care and companionship, and your cat will forever hold a special place in your heart.</p>
+
+            </div>
+
+            <div class="tags">
+                <p>tags:</p>
+                <a href="#"> Dying Cat</a>
+                <a href="#">Signs </a>
+            </div>
+
+        </main>
+    </div>
+
+
+    <div class="articles">
+        <div class="article-heading">
+            <h5>articles </h5>
+            <h6>recent blogs</h6>
+        </div>
+        <div class="cards container">
+            <div class="card-container one">
+
+                <div class="img-holder">
+                    <a href="blog1.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"UNRAVELING THE MYSTERIOUS BEHAVIOR OF CATS"</h4>
+                    <p>Discover the hidden motivations behind their quirky habits, from kneading and purring to hunting and territory marking. Gain valuable insights into their communication cues and body language, empowering you to better understand and connect with your feline friend on a deeper level.</p>
+                </div>
+
+            </div>
+
+            <div class="card-container two">
+                <div class="img-holder">
+                    <a href="blog3.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Mastering the Art of Cat Care"</h4>
+                    <p>Caring for your furry feline companion involves more than just providing food and shelter. In this comprehensive article, we explore the essential aspects of cat care, from establishing a nurturing environment to maintaining their overall health and well-being. Discover practical tips to ensure that your cat receives the love, attention, and care they deserve.</p>
+                </div>
+            </div>
+
+            <div class="card-container three">
+                <div class="img-holder">
+                    <a href="blog4.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Cat Facts That Will Amaze You"</h4>
+                    <p>Curious about cats? Brace yourself for a mind-blowing experience as we uncover a treasure trove of captivating facts about our whiskered companions. Discover the astonishing truth behind their exceptional hunting skills, their intricate grooming rituals, and their mysterious nocturnal habits. </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="button">
+            <a href="#" class="btn">View more</a>
+        </div> -->
+    </div>
+    
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <a href="about.html">Mission</a>
+                    <a href="about.html#s1">Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="blogs.html">Cat Grooming</a>
+                    <a href="cats.html">Cat Adoption</a>
+                    <a href="accessories.html">Cat Accessories</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="contact.html">Email</a>
+                    <a href="contact.html">Phone</a>
+                    <a href="contact.html">Address</a>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2023 FelineFinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+</html>

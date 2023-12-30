@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feline Finds</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+    
+            accordionItemHeaders.forEach(accordionItemHeader => {
+                accordionItemHeader.addEventListener("click", event => {
+                    accordionItemHeader.classList.toggle("active");
+                    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    
+                    if (accordionItemHeader.classList.contains("active")) {
+                        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+                    } else {
+                        accordionItemBody.style.maxHeight = 0;
+                    }
+                });
+            });
+        });
+    </script>
+    
+
+
+
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+
+       /* Background  Css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* Nav bar */
+        .navbar {
+            background-color: black;
+            /* pastel light green */
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            z-index: 2;
+            font-family: 'Nunito', sans-serif;
+            
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color:#c59958;
+        }
+
+       
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: #c59958;;
+            /* pastel light green */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .logo {
+            font-weight: bold;
+            padding-right: 15px;
+            font-size: 25px;
+            padding-left:0px;
+        }
+        .logo1{
+            margin-right: 2px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* footer */
+        .footer {
+            background-color: black;
+            /* margin-top: 600px; */
+            padding: 35px 0;
+            text-align: center;
+            position: scroll;
+            width: 100%;
+           
+           
+            
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-section {
+            margin: 25px;
+        }
+
+        .footer-section h3 {
+            color:#c59958;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color:#c59958;
+            text-decoration: none;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D7B996;
+            /* light brown */
+        }
+
+        .footer-text {
+            color:#c59958;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        /* footer end */
+       
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            /* background-image: url(bgcats.jpg); */
+            /* background-size: cover;
+            background-position: center; */
+        }
+
+        .text {
+            color: white;
+            font-size: 50px;
+            /* margin-top: 0px; */
+            text-align: center;
+            padding-top: 130px;
+            font-family: 'Roboto', sans-serif;
+
+
+        }
+
+
+/* Icons CSS */
+
+        .social-menu ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 0;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            display: flex;
+        }
+
+        .social-menu ul li {
+            list-style: none;
+            margin: 0 15px;
+            margin-top: 140px;
+        }
+
+        .social-menu ul li .fa {
+            font-size: 30px;
+            line-height: 60px;
+            transition: .6s;
+            color: #000;
+        }
+
+
+        .social-menu ul li .fa:hover {
+            color: #fff;
+        }
+
+        .social-menu ul li a {
+            position: relative;
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align: center;
+            transition: .6s;
+            box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
+        }
+
+        .social-menu ul li a:hover {
+            transform: translate(0, -10px);
+        }
+
+        .social-menu ul li:nth-child(1) a:hover {
+            background-color: #1877F2;
+        }
+
+        .social-menu ul li:nth-child(2) a:hover {
+            background-color: #E4405F;
+        }
+
+        .social-menu ul li:nth-child(3) a:hover {
+            background-color: #0A66C2;
+        }
+
+        .social-menu ul li:nth-child(4) a:hover {
+            background-color: #25D366;
+        }
+
+
+        /* //Accordation  CSS */
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* background-color: grey; */
+            /* background-image: url(bgcats.jpg); */
+            background-image: url(bg1.jpeg);
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            /* cursor: url(cursor48.jpeg) ,auto; */
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        .accordion {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        .accordion-item {
+            background-color: #fff;
+            color: #111;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .accordion-item-header {
+            padding: 0.5rem 3rem 0.5rem 1rem;
+            min-height: 3.5rem;
+            line-height: 1.25rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .accordion-item-header::after {
+            content: "\002B";
+            font-size: 2rem;
+            position: absolute;
+            right: 1rem;
+        }
+
+        .accordion-item-header.active::after {
+            content: "\2212";
+        }
+
+        .accordion-item-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-item-body-content {
+            padding: 1rem;
+            line-height: 1.5rem;
+            border-top: 1px solid;
+            border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+        }
+
+        @media(max-width:767px) {
+            html {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <navbar>
+        <div class="navbar">
+            <ul>
+                <li class="logo1"><a href="#"><img src="logo1.png" height="45px" alt="FelineFinds Logo"></a></li>
+                <li class="logo"><a href="#"><strong>FelineFinds</strong></a></li>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="http://localhost/felinefinds/cats.php">Cats</a></li>
+                <li class="dropdown">
+                    <a href="#">Accessories</a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost/felinefinds/catfood.php">Food</a>
+                        <a href="http://localhost/felinefinds/cattoy.php">Toys</a>
+                        <a href="http://localhost/felinefinds/catcloth.php">Clothing</a>
+                    </div>
+                </li>
+                <li><a href="blog1.html">Blogs</a></li>
+                <li><a href="http://127.0.0.1:5001">Meow Medic</a></li>
+                <li><a href="http://localhost/felinefinds/vets.php">Vets</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </navbar>
+
+
+
+    <div class="banner">
+        <div class="text">
+            <p class="text-para">"Got Questions or Pawsitive Feedback? "</p>
+            <p class="text-para">We're All Ears!</p>
+            <p class="text-para"> Contact Us</p>
+
+            <br><br><br>
+        </div>
+        <div class="social-menu">
+
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- //Accordian -->
+        <h1 style="font-size: 55px;">FAQ</h1>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header active">
+                    How can I contact customer support?
+                </div>
+                <div class="accordion-item-body" style="max-height: 100%">
+                    <div class="accordion-item-body-content">
+                        You can reach our customer support team by emailing on Felinefindsupport@gmail.com or by calling our toll-free number 1-800-123-4567. We are available to assist you from Monday to Friday, 9 AM to 5 PM and we aim to respond to all inquiries within 24-48 hours.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item ">
+                <div class="accordion-item-header ">
+                    Are your products safe for cats with allergies or sensitivities?
+                </div>
+                <div class="accordion-item-body" style="max-height: 100%">
+                    <div class="accordion-item-body-content">
+                        We offer a variety of products suitable for cats with allergies or sensitivities. However, we recommend reviewing the product descriptions and ingredient lists carefully to ensure they meet your cat's specific dietary requirements. If you have any concerns, consult with your veterinarian before making a purchase of a cat item.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item ">
+                <div class="accordion-item-header ">
+                    Can I purchase products directly from the website?
+                </div>
+                <div class="accordion-item-body" style="max-height: 100%">
+                    <div class="accordion-item-body-content ">
+                        <!-- <ul style="padding-left: 1rem;">
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Frameworks (CSS and JavaScript frameworks)</li>
+                            <li>Responsive Design</li>
+                            <li>Version Control/Git</li>
+                            <li>Testing/Debugging</li>
+                            <li>Browser Developer Tools</li>
+                            <li>Web Performance</li>
+                            <li>SEO (Search Engine Optimization)</li>
+                            <li>Command Line</li>
+                            <li>CMS (Content Management System)</li>
+                        </ul> -->
+
+                        No, the Feline Finds website serves as a platform to showcase various products for cats. To make a purchase, please contact the seller directly using the WhatsApp number provided. They will guide you through the purchasing process and arrange the transaction with you.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item ">
+                <div class="accordion-item-header ">
+                    What is the response time for WhatsApp inquiries?
+                </div>
+                <div class="accordion-item-body" style="max-height: 100%">
+                    <div class="accordion-item-body-content">
+                        The response time may vary depending on the seller's availability and workload. However, sellers strive to respond to inquiries as soon as possible. If you don't receive an immediate response, please allow some time for the seller to get back to you. Rest assured, they will reply to your inquiry.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <div class="accordion-item-header ">
+                    How frequently are new products added to the website?
+                </div>
+                <div class="accordion-item-body" style="max-height: 100%">
+                    <div class="accordion-item-body-content">
+                        New products are added regularly as sellers update their inventory. Feline Finds strives to keep the product selection fresh and exciting for users. It's recommended to check back frequently or follow the website's social media accounts for updates on newly added products and any special offers.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <a href="about.html">Mission</a>
+                    <a href="about.html#s1">Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="blogs.html">Cat Grooming</a>
+                    <a href="cats.html">Cat Adoption</a>
+                    <a href="accessories.html">Cat Accessories</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="contact.html">Email</a>
+                    <a href="contact.html">Phone</a>
+                    <a href="contact.html">Address</a>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2023 FelineFinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        
+        html{
+            font-size: 10px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        h1{
+            font-size: 1.9rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+
+        /* header{
+            width: 100%;
+            height: 5rem;
+            background-color: aliceblue;
+            position: fixed;
+            top: 0;
+            z-index: 333;
+        } */
+
+        .container{
+            width: 96%;
+            max-width: 117rem;
+            margin: 0 auto;
+        }
+
+
+/* Nav bar */
+        .navbar {
+            background-color: black;
+            /* pastel light green */
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            z-index: 2;
+            font-family: 'Nunito', sans-serif;
+            
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color:#c59958;
+            font-size: 14px;
+        }
+
+       
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: #c59958;;
+            /* pastel light green */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .logo {
+            font-weight: bold;
+            padding-right: 15px;
+            font-size: 25px;
+            padding-left:0px;
+        }
+
+        .logo a {
+            font-size: 25px; /* Adjust the size as per your needs */
+           
+        }
+        .logo1{
+            margin-right: 2px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* footer */
+        .footer {
+            background-color: black;
+            /* margin-top: 600px; */
+            padding: 35px 0;
+            text-align: center;
+            position: scroll;
+            width: 100%;
+           
+           
+            
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-section {
+            margin: 25px;
+        }
+
+        .footer-section h3 {
+            color:#c59958;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color:#c59958;
+            text-decoration: none;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D7B996;
+            /* light brown */
+        }
+
+        .footer-text {
+            color:#c59958;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        .hero{
+            max-width: 114rem;
+            height: 40rem;
+            background: url(question.jpeg) no-repeat center center / cover;
+            margin: 5rem auto;
+            
+        }
+
+
+
+
+        main{
+            width: 100%;
+            max-width: 80rem;
+            /* background-color: rgb(204, 158, 231); */
+            background-color: white;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            margin-top: -15rem;
+        }
+
+        main h2{
+            font-size: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        main .profile-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem;
+        }
+
+        main .profile-container .profile{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .profile-container .profile .img-container{
+            width: 6rem;
+            height: 6rem;
+            background: url(author4.jpeg) no-repeat center center / cover;
+            border-radius: 0.5rem;
+        }
+
+        main .profile-container .profile .text{
+            margin: 0 1rem;
+            color: #5b5963;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .profile .text h3{
+            text-transform: uppercase;
+        }
+
+        /* .btn{
+            display: inline-block;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            background-color: green;
+            border-radius: 0.2rem;
+        } */
+
+        main p{
+            color: #5b5963;
+            margin: 1rem 0;
+        }
+
+        main .content h4{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #5b5963;
+            margin: 2rem 0;
+        }
+
+        main .content .content-img-container{
+            width: 100%;
+            height: 35rem;
+            background: url(cathunt.jpeg) no-repeat center center / cover;
+        }
+
+        /* main .content .content-img-container2{
+            width: 100%;
+            height: 40rem;
+            background: url(catfood.jpg) no-repeat center center / cover;
+        } */
+
+
+        blockquote{
+            font-size: 1.4rem;
+            padding: 1rem 2.8rem;
+            line-height: 1.6;
+            font-weight: 300;
+            box-shadow: inset 0.5rem 0 0 #fd735a ;
+            background-color: #f5f5f5;
+        }
+
+
+        .tags{
+            display: flex;
+            align-items: center;
+        }
+        .tags p{
+            font-size: 1.4rem;
+            text-transform: capitalize;
+        }
+        .tags a{
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            background-color: #f5f5f5;
+            color: #5b5963;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin: 0 0.5rem;
+
+        }
+
+        .articles{
+            width: 100%;
+            background-color: #f5f5f5;
+            /* margin: 4rem 0; */
+            margin-top: 4rem;
+            padding: 5rem 0;
+        }
+
+        .articles .article-heading{
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .article-heading h5{
+            font-size: 10rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            position: relative;
+            color: rgba(223, 223, 223, 0.932);
+        }
+
+        .article-heading h6{
+            font-size: 4rem;
+            font-weight: 200;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #5b5963;
+        }
+
+        .cards{
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem auto;
+            gap: 5rem;
+        }
+
+        .cards .card-container{
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container .img-holder{
+            max-width: 100%;
+            height: 24rem;
+            background: url(madcat.jpeg) no-repeat center center /cover;
+            position: relative;
+        }
+
+        .cards .card-container.two .img-holder{
+            background: url(catdying2.jpeg) no-repeat center center /cover;
+            
+            
+        }
+
+        .cards .card-container.three .img-holder{
+            background: url(catcare2.jpeg) no-repeat center center /cover;
+            
+        }
+
+        .cards .card-container .img-holder a{
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            display: inline-block;
+            color: #429f98;
+            font-weight: 400;
+            background-color: white;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container:hover{
+            transform: translateY(-1rem);
+        }
+
+        .cards .card-container:hover a{
+            background-color: #fd735a;
+            color: white;
+        }
+
+        .cards .card-container .card-text {
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 0 0.3rem grey;
+
+        }
+
+        .cards .card-container .card-text h4{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .cards .card-container .card text p{
+            font-size: 1.2rem;
+        }
+
+        /* .articles .button{
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .articles .btn{
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            font-weight: 200;
+            border-radius: none;
+            padding: 0.5rem 3rem;
+        } */
+
+      </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <navbar>
+        <div class="navbar">
+            <ul>
+                <li class="logo1"><a href="#"><img src="logo1.png" height="45px" alt="FelineFinds Logo"></a></li>
+                <li class="logo"><a href="#"><strong>FelineFinds</strong></a></li>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="http://localhost/felinefinds/cats.php">Cats</a></li>
+                <li class="dropdown">
+                    <a href="#">Accessories</a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost/felinefinds/catfood.php">Food</a>
+                        <a href="http://localhost/felinefinds/cattoy.php">Toys</a>
+                        <a href="http://localhost/felinefinds/catcloth.php">Clothing</a>
+                    </div>
+                </li>
+                <li><a href="blog1.html">Blogs</a></li>
+                <li><a href="http://127.0.0.1:5001">Meow Medic</a></li>
+                <li><a href="http://localhost/felinefinds/vets.php">Vets</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </navbar>
+   
+
+<!-- Main page -->
+
+    <div class="container">
+        <div class="hero">
+           
+
+        </div>
+
+
+        <main>
+            <h2>Discovering the Fascinating Facts About Cats</h2>
+            <div class="profile-container">
+                <div class="profile">
+                    <div class="img-container">
+
+                    </div>
+                    <div class="text">
+                        <h3>Umar Fahad</h3>
+                        <p>September 11,2023</p>
+                    </div>
+                </div>
+                <!-- <div class="button">
+                    <a href="#" class="btn">Passion</a>
+                </div> -->
+            </div>
+
+            <div class="content">
+                <p>Cats have long captivated the hearts and minds of humans, with their enigmatic behavior and graceful demeanor. As a renowned feline behaviorist, I have spent years studying these marvelous creatures, unraveling the secrets behind their mysterious ways. In this article, we will delve into some lesser-known facts about cats that will shed light on their intriguing nature, helping us appreciate them even more.
+
+                </p>
+
+
+                
+                <h4>Fact 1: Cats are Natural Athletes</h4>
+
+                <p>Cats are renowned for their agility and acrobatic prowess. Their incredible athletic abilities are a result of their unique skeletal structure and highly developed muscular system. With flexible spines, powerful hind legs, and retractable claws, cats are designed for stealthy movements and impressive jumps. They can leap up to six times their body length and twist in mid-air with astonishing precision. Observing a cat's graceful movements is a testament to their innate athleticism.</p>
+
+               
+                
+
+               <h4>Fact 2: Cats are Communicative Creatures</h4>
+
+                <p>While cats may not possess a wide range of vocalizations like dogs, they are excellent communicators. Their subtle body language and vocal cues allow them to express their needs and emotions. Paying attention to a cat's tail position, ear movements, and eye contact can provide valuable insights into their mood and intentions. Purring, often associated with contentment, can also indicate pain or distress in certain situations. Understanding these subtle signals helps foster a deeper connection with our feline companions.</p>
+
+                <blockquote>"Through their subtle body language and vocal cues, cats whisper the language of connection, inviting us to listen and understand the depths of their communicative nature." -<i> Alexander Grant, Feline Communication Expert </i></blockquote>
+
+                <h4>Fact 3: Cats are Natural Predators</h4>
+
+                <p>Cats are born predators, and their hunting instincts remain strong even in domesticated environments. This natural inclination stems from their ancestry as desert-dwelling hunters. Their keen senses, including exceptional night vision and acute hearing, make them proficient hunters of small prey. Although domesticated cats may not rely on hunting for survival, providing them with interactive toys and playtime that simulate hunting can help satisfy their primal instincts and provide mental stimulation.</p>
+
+                <div class="content-img-container">
+
+                </div>
+
+
+                <h4>Fact 4: Cats Have a Unique Sleep-Wake Cycle</h4>
+                
+
+                <p>If you've ever wondered why your feline companion appears to sleep all day and become active at night, there's a reason behind it. Cats are crepuscular animals, which means they are most active during dawn and dusk. This behavior is a result of their ancestral hunting patterns when twilight provided optimal conditions for capturing prey. Cats typically sleep for 12-16 hours a day, conserving energy for their short bursts of intense activity. Understanding and respecting their sleep-wake cycle can ensure a harmonious coexistence with your feline friend.</p>
+
+                
+
+                <h4>Fact 5: Cats Have Remarkable Hearing Abilities</h4>
+
+                <p>Cats possess an exceptional sense of hearing that surpasses that of humans and many other animals. Their ears are designed to detect high-frequency sounds, enabling them to pinpoint the location of prey or potential threats with incredible accuracy. Cats can rotate their ears independently by almost 180 degrees, allowing them to hone in on specific sounds. This acute sense of hearing not only contributes to their hunting prowess but also helps them navigate their surroundings and remain alert to any potential dangers.</p>
+
+                <blockquote>
+                    Contrary to popular belief, cats' hearing abilities are merely average in the animal kingdom. While they possess a decent sense of hearing, it is not exceptional compared to other animals. Their range of audible frequencies is limited, and their ability to detect faint sounds is relatively average. Cats' hearing, though adequate for their survival, is not as remarkable as often portrayed.
+                </blockquote>
+
+                <h4>Fact 6: Cats Have a Wide Range of Vocalizations</h4>
+
+                <p>While cats are not as vocal as some other animals, they possess an array of vocalizations that they use to communicate with humans and other cats. Beyond the familiar meow, cats can produce a variety of sounds, including purring, hissing, growling, chirping, trilling, and even yowling. Each vocalization serves a distinct purpose, conveying different messages. For instance, purring is often associated with contentment, while hissing and growling are defensive warnings. By paying attention to the specific sounds cats make in different situations, we can better understand their needs, emotions, and intentions.</p>
+
+                <p>Cats continue to bewilder and captivate us with their innate grace, agility, and mysterious behavior. By delving into the fascinating facts about cats, we gain a deeper understanding and appreciation for these remarkable creatures. From their athletic abilities and communicative nature to their social inclinations and unique sleep patterns, cats are a source of endless fascination. Embracing their individuality and providing them with the care and environment they need allows us to forge lasting bonds with these enigmatic companions.</p>
+
+            </div>
+
+            <div class="tags">
+                <p>tags:</p>
+                <a href="#"> Cat Facts</a>
+                <a href="#">Predators </a>
+            </div>
+
+        </main>
+    </div>
+
+
+    <div class="articles">
+        <div class="article-heading">
+            <h5>articles </h5>
+            <h6>recent blogs</h6>
+        </div>
+        <div class="cards container">
+            <div class="card-container one">
+
+                <div class="img-holder">
+                    <a href="blog1.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"UNRAVELING THE MYSTERIOUS BEHAVIOR OF CATS"</h4>
+                    <p>Discover the hidden motivations behind their quirky habits, from kneading and purring to hunting and territory marking. Gain valuable insights into their communication cues and body language, empowering you to better understand and connect with your feline friend on a deeper level.</p>
+                </div>
+
+            </div>
+
+            <div class="card-container two">
+                <div class="img-holder">
+                    <a href="blog2.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Is It Time to Say Goodbye?"</h4>
+                    <p>Discovering the subtle signs that indicate your cat may be nearing the end can be a challenging and emotional experience. In this article, we delve into the physical and behavioral indicators that may suggest your beloved feline companion is in their final stages, providing guidance to help you navigate this difficult time.</p>
+                </div>
+            </div>
+
+            <div class="card-container three">
+                <div class="img-holder">
+                    <a href="blog3.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Mastering the Art of Cat Care"</h4>
+                    <p>Caring for your furry feline companion involves more than just providing food and shelter. In this comprehensive article, we explore the essential aspects of cat care, from establishing a nurturing environment to maintaining their overall health and well-being. Discover practical tips to ensure that your cat receives the love, attention, and care they deserve.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="button">
+            <a href="#" class="btn">View more</a>
+        </div> -->
+    </div>
+    
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <a href="about.html">Mission</a>
+                    <a href="about.html#s1">Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="blogs.html">Cat Grooming</a>
+                    <a href="cats.html">Cat Adoption</a>
+                    <a href="accessories.html">Cat Accessories</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="contact.html">Email</a>
+                    <a href="contact.html">Phone</a>
+                    <a href="contact.html">Address</a>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2023 FelineFinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+</html>

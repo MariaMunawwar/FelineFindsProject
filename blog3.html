@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        
+        html{
+            font-size: 10px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        h1{
+            font-size: 1.9rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+
+        /* header{
+            width: 100%;
+            height: 5rem;
+            background-color: aliceblue;
+            position: fixed;
+            top: 0;
+            z-index: 333;
+        } */
+
+        .container{
+            width: 96%;
+            max-width: 117rem;
+            margin: 0 auto;
+        }
+
+
+/* Nav bar */
+        .navbar {
+            background-color: black;
+            /* pastel light green */
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            z-index: 2;
+            font-family: 'Nunito', sans-serif;
+            
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color:#c59958;
+            font-size: 14px;
+        }
+
+       
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: #c59958;;
+            /* pastel light green */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .logo {
+            font-weight: bold;
+            padding-right: 15px;
+            font-size: 25px;
+            padding-left:0px;
+        }
+        .logo a {
+            font-size: 25px; /* Adjust the size as per your needs */
+           
+        }
+        .logo1{
+            margin-right: 2px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* footer */
+        .footer {
+            background-color: black;
+            /* margin-top: 600px; */
+            padding: 35px 0;
+            text-align: center;
+            position: scroll;
+            width: 100%;
+           
+           
+            
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-section {
+            margin: 25px;
+        }
+
+        .footer-section h3 {
+            color:#c59958;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color:#c59958;
+            text-decoration: none;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D7B996;
+            /* light brown */
+        }
+
+        .footer-text {
+            color:#c59958;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+
+        .hero{
+            max-width: 114rem;
+            height: 40rem;
+            background: url(catlove.jpeg) no-repeat center center / cover;
+            margin: 5rem auto;
+            
+        }
+
+
+
+
+        main{
+            width: 100%;
+            max-width: 80rem;
+            /* background-color: rgb(204, 158, 231); */
+            background-color: white;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            margin-top: -15rem;
+        }
+
+        main h2{
+            font-size: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        main .profile-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem;
+        }
+
+        main .profile-container .profile{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .profile-container .profile .img-container{
+            width: 6rem;
+            height: 6rem;
+            background: url(author3.jpeg) no-repeat center center / cover;
+            border-radius: 0.5rem;
+        }
+
+        main .profile-container .profile .text{
+            margin: 0 1rem;
+            color: #5b5963;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .profile .text h3{
+            text-transform: uppercase;
+        }
+
+        /* .btn{
+            display: inline-block;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            background-color: green;
+            border-radius: 0.2rem;
+        } */
+
+        main p{
+            color: #5b5963;
+            margin: 1rem 0;
+        }
+
+        main .content h4{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #5b5963;
+            margin: 2rem 0;
+        }
+
+        main .content .content-img-container{
+            width: 100%;
+            height: 35rem;
+            background: url(catbath.png) no-repeat center center / cover;
+        }
+
+        /* main .content .content-img-container2{
+            width: 100%;
+            height: 40rem;
+            background: url(catfood.jpg) no-repeat center center / cover;
+        } */
+
+
+        blockquote{
+            font-size: 1.4rem;
+            padding: 1rem 2.8rem;
+            line-height: 1.6;
+            font-weight: 300;
+            box-shadow: inset 0.5rem 0 0 #fd735a ;
+            background-color: #f5f5f5;
+        }
+
+
+        .tags{
+            display: flex;
+            align-items: center;
+        }
+        .tags p{
+            font-size: 1.4rem;
+            text-transform: capitalize;
+        }
+        .tags a{
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            background-color: #f5f5f5;
+            color: #5b5963;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin: 0 0.5rem;
+
+        }
+
+        .articles{
+            width: 100%;
+            background-color: #f5f5f5;
+            /* margin: 4rem 0; */
+            margin-top: 4rem;
+            padding: 5rem 0;
+        }
+
+        .articles .article-heading{
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .article-heading h5{
+            font-size: 10rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            position: relative;
+            color: rgba(223, 223, 223, 0.932);
+        }
+
+        .article-heading h6{
+            font-size: 4rem;
+            font-weight: 200;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #5b5963;
+        }
+
+        .cards{
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem auto;
+            gap: 5rem;
+        }
+
+        .cards .card-container{
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container .img-holder{
+            max-width: 100%;
+            height: 24rem;
+            background: url(madcat.jpeg) no-repeat center center /cover;
+            position: relative;
+        }
+
+        .cards .card-container.two .img-holder{
+            background: url(catdying2.jpeg) no-repeat center center /cover;
+            
+            
+        }
+
+        .cards .card-container.three .img-holder{
+            background: url(catfacts2.png) no-repeat center center /cover;
+            
+        }
+
+        .cards .card-container .img-holder a{
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            display: inline-block;
+            color: #429f98;
+            font-weight: 400;
+            background-color: white;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            transition: all 0.4s ease;
+        }
+
+        .cards .card-container:hover{
+            transform: translateY(-1rem);
+        }
+
+        .cards .card-container:hover a{
+            background-color: #fd735a;
+            color: white;
+        }
+
+        .cards .card-container .card-text {
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 0 0.3rem grey;
+
+        }
+
+        .cards .card-container .card-text h4{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .cards .card-container .card text p{
+            font-size: 1.2rem;
+        }
+
+        /* .articles .button{
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .articles .btn{
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            font-weight: 200;
+            border-radius: none;
+            padding: 0.5rem 3rem;
+        } */
+
+      </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <navbar>
+        <div class="navbar">
+            <ul>
+                <li class="logo1"><a href="#"><img src="logo1.png" height="45px" alt="FelineFinds Logo"></a></li>
+                <li class="logo"><a href="#"><strong>FelineFinds</strong></a></li>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="http://localhost/felinefinds/cats.php">Cats</a></li>
+                <li class="dropdown">
+                    <a href="#">Accessories</a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost/felinefinds/catfood.php">Food</a>
+                        <a href="http://localhost/felinefinds/cattoy.php">Toys</a>
+                        <a href="http://localhost/felinefinds/catcloth.php">Clothing</a>
+                    </div>
+                </li>
+                <li><a href="blog1.html">Blogs</a></li>
+                <li><a href="http://127.0.0.1:5001">Meow Medic</a></li>
+                <li><a href="http://localhost/felinefinds/vets.php">Vets</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </navbar>
+   
+<!-- Main page -->
+
+    <div class="container">
+        <div class="hero">
+           
+
+        </div>
+
+
+        <main>
+            <h2>MASTERING THE ART OF CAT CARE</h2>
+            <div class="profile-container">
+                <div class="profile">
+                    <div class="img-container">
+
+                    </div>
+                    <div class="text">
+                        <h3>Samantha Collins</h3>
+                        <p>August 18,2022</p>
+                    </div>
+                </div>
+                <!-- <div class="button">
+                    <a href="#" class="btn">Passion</a>
+                </div> -->
+            </div>
+
+            <div class="content">
+                <p>Cats have been our furry companions for thousands of years, captivating us with their grace, independence, and mysterious charm. To truly appreciate the beauty of living with a cat, one must delve into the art of cat care. In this article, we will explore the essential aspects of mastering this art and delve into the intricate world of feline companionship. Join us on this enlightening journey as we uncover the secrets to providing the best care for our beloved feline friends.To truly master the art of cat care, it is crucial to understand feline behavior. Cats are complex creatures with unique personalities, and their behaviors often communicate their needs and emotions. Observing their body language, vocalizations, and interactions with their environment can provide valuable insights into their well-being.
+
+                </p>
+
+
+                
+                <h4>Creating a Safe and Stimulating Environment</h4>
+
+                <p>Creating a safe and stimulating environment is vital for a cat's overall well-being. Cats thrive in an environment that provides opportunities for exploration, exercise, and mental stimulation. This can be achieved by providing scratching posts, interactive toys, vertical spaces, and cozy hiding spots. Additionally, ensuring a cat-friendly household by keeping harmful substances out of reach and providing a balanced diet is essential for their health.</p>
+
+               
+
+                <p>A well-balanced diet is fundamental to a cat's health and longevity. Cats are obligate carnivores, which means they require a diet rich in animal protein. Providing high-quality commercial cat food that meets their nutritional needs is crucial. It is important to consult with a veterinarian to determine the right type and amount of food for your feline companion. Fresh water should always be readily available to keep them properly hydrated. Grooming plays a significant role in maintaining a cat's overall health and happiness. Regular brushing helps prevent hairballs, keeps their coat healthy, and strengthens the bond between cat and owner. Additionally, maintaining proper dental hygiene through regular teeth brushing and annual dental check-ups is crucial to prevent dental diseases.</p>
+
+                
+
+               <h4>Healthcare and Preventive Measures</h4>
+
+                <p>To master the art of cat care, it is important to prioritize their healthcare needs. Regular veterinary check-ups, vaccinations, and preventive measures against parasites such as fleas and ticks are essential for a cat's well-being. Spaying or neutering your cat is also highly recommended to prevent unwanted pregnancies and reduce the risk of certain health issues. Cats communicate primarily through body language, and mastering this aspect is crucial for providing optimal care. Understanding the meaning behind their purrs, meows, and different postures can help identify when they are happy, anxious, or in need of attention. This knowledge allows us to respond appropriately to their needs and strengthen the bond we share.</p>
+
+                <blockquote>"In the art of cat care, we hold the key to unlocking their contentment and well-being. By nurturing their physical and emotional needs, we forge a bond that transcends words. For in the gentle touch and devoted attention we offer, we find the essence of true companionship." -<i>"Dr. Emily Reynolds, Feline Behavior Specialist"</i></blockquote>
+
+                
+
+                <p>Cats are highly sensitive creatures with emotional needs that require our attention. Advanced cat care involves recognizing and responding to their emotional cues. Building a strong bond through interactive play, grooming sessions, and affectionate interactions can significantly impact their emotional well-being. Additionally, providing designated safe spaces or "sanctuaries" where cats can retreat and feel secure is crucial, especially in multi-cat households. By understanding and addressing their emotional needs, we can create a harmonious and stress-free environment.</p>
+
+                
+
+                <p>Intellectual challenges are essential for a cat's mental health. Advanced cat care involves providing a variety of mentally stimulating activities. Puzzle toys, treat-dispensing toys, and interactive games help keep their minds sharp and prevent boredom. Teaching them new tricks and commands through positive reinforcement training sessions not only stimulates their intellect but also strengthens the bond between cat and owner. Engaging in regular clicker training sessions is an excellent way to tap into their natural curiosity and intelligence.</p>
+
+                <div class="content-img-container">
+
+                </div>
+
+                <h4>Senior Cat Care:</h4>
+
+                <p>As cats age, their needs change, requiring special attention and care. Advanced cat care involves understanding the unique requirements of senior cats. Regular veterinary check-ups become even more critical to detect and address age-related health issues promptly. Adapting their diet to support their changing metabolism and maintaining an enriching yet accessible environment become vital considerations. Providing soft bedding, easy access to litter boxes, and engaging in gentle exercise tailored to their abilities can help senior cats enjoy their golden years comfortably.</p>
+
+                <blockquote>
+                    "In the twilight of whiskers, with grace and gentleness, we tend to their needs, bringing warmth and tenderness. Senior cats, a tapestry of wisdom and love, deserve our care, like a symphony above"-<i>Poet Lila Summers</i>
+                </blockquote>
+
+                <p>Congratulations on furthering your knowledge in the art of cat care! By incorporating advanced techniques, such as environmental enrichment, addressing emotional needs, promoting mental stimulation, exploring holistic approaches, and providing specialized care for senior cats, we can truly provide the best possible lives for our feline companions. Let us continue to learn, grow, and deepen our bond with these remarkable creatures as we master the art of cat care.</p>
+
+            </div>
+
+            <div class="tags">
+                <p>tags:</p>
+                <a href="#"> Cat Care</a>
+                <a href="#">Health Care </a>
+            </div>
+
+        </main>
+    </div>
+
+
+    <div class="articles">
+        <div class="article-heading">
+            <h5>articles </h5>
+            <h6>recent blogs</h6>
+        </div>
+        <div class="cards container">
+            <div class="card-container one">
+
+                <div class="img-holder">
+                    <a href="blog1.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"UNRAVELING THE MYSTERIOUS BEHAVIOR OF CATS"</h4>
+                    <p>Discover the hidden motivations behind their quirky habits, from kneading and purring to hunting and territory marking. Gain valuable insights into their communication cues and body language, empowering you to better understand and connect with your feline friend on a deeper level.</p>
+                </div>
+
+            </div>
+
+            <div class="card-container two">
+                <div class="img-holder">
+                    <a href="blog2.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Is It Time to Say Goodbye?"</h4>
+                    <p>Discovering the subtle signs that indicate your cat may be nearing the end can be a challenging and emotional experience. In this article, we delve into the physical and behavioral indicators that may suggest your beloved feline companion is in their final stages, providing guidance to help you navigate this difficult time.</p>
+                </div>
+            </div>
+
+            <div class="card-container three">
+                <div class="img-holder">
+                    <a href="blog4.html">Read article</a>
+                </div>
+                <div class="card-text">
+                    <h4>"Cat Facts That Will Amaze You"</h4>
+                    <p>Curious about cats? Brace yourself for a mind-blowing experience as we uncover a treasure trove of captivating facts about our whiskered companions. Discover the astonishing truth behind their exceptional hunting skills, their intricate grooming rituals, and their mysterious nocturnal habits. </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="button">
+            <a href="#" class="btn">View more</a>
+        </div> -->
+    </div>
+    
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <a href="about.html">Mission</a>
+                    <a href="about.html#s1">Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="blogs.html">Cat Grooming</a>
+                    <a href="cats.html">Cat Adoption</a>
+                    <a href="accessories.html">Cat Accessories</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="contact.html">Email</a>
+                    <a href="contact.html">Phone</a>
+                    <a href="contact.html">Address</a>
+                </div>
+            </div>
+            <p class="footer-text">&copy; 2023 FelineFinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+</html>
